@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EcoPlastix</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="style.css?v=2">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<body>
+<header>
+ 
+   <div id="navbar-placeholder"></div>
+</header>
+  
+
+<section class="video-section">
+  <div class="video-container">
+    <video autoplay muted loop playsinline class="project-video">
+      <source src="uploads/praia.mp4" type="video/mp4">
+      O seu navegador não suporta vídeo HTML5.
+    </video>
+    <div class="video-overlay-text">
+      <h2>Inovação e Sustentabilidade Alimentar</h2>
+      <p>Transformando resíduos em soluções biodegradáveis para um amanhã melhor.</p>
+      <a href="nossoprojeto.html" class="video-btn">Conheça o Projeto</a>
+    </div>
+  </div>
+</section>
+
+
+<section class="counter-section">
+  <div class="container-text-center">
+    <h2>Impacto na Produção do Plástico a Nível Mundial</h2>
+
+    <div class="row mt-4">
+
+      <div class="col-md-4">
+        <h3><span class="counter" data-target="45"></span>%</h3>
+        <p>menos emissões de CO₂</p>
+      </div>
+
+      <div class="col-md-4">
+        <h3><span class="counter" data-target="35"></span>%</h3>
+        <p>redução dos custos na produção do plástico</p>
+      </div>
+
+      <div class="col-md-4">
+        <h3><span class="counter" data-target="35"></span>%</h3>
+        <p>redução custos de produção</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="team-containercss">
+
+  <div class="linha-separadora"></div>
+  <div class="titulo">
+ <h2>Quem Somos?</h2>
+ </div>
+<div class="team-container">
+
+    <div class="team-card">
+        <img src="uploads/mulher-jovem-mostrando-varias-expressoes-isoladas-no-fundo-branco.jpg" alt="Funcionário 3">
+        <h3>Catarina</h3>
+        <p>Engenheira de Materiais</p>
+        <p>Responsável por desenvolver e testar novos materiais plásticos sustentáveis.</p>
+    </div>
+
+    <div class="team-card">
+        <img src="uploads/man-8565961_1280.jpg" alt="Funcionário 3">
+        <h3>Pedro</h3>
+        <p>Gestor de Projetos</p>
+        <p>Coordena e acompanha todas as etapas dos projetos para garantir eficiência e resultados sustentáveis.</p>
+    </div>
+
+ <div class="team-card">
+        <img src="uploads/man-7023657_1920.jpg" alt="Funcionário 3">
+        <h3>Guilherme</h3>
+        <p>Diretor Industrial</p>
+        <p>Supervisiona as operações fabris, assegurando produção otimizada e padrões de qualidade elevados.</p>
+    </div>
+
+     <div class="team-card">
+        <img src="uploads/em3.jpg" alt="Funcionário 3">
+        <h3>Alexandre</h3>
+        <p>Engenheiro de Produção</p>
+        <p>Planeia e melhora processos produtivos para aumentar a eficiência e reduzir desperdícios.</p>
+    </div>
+
+</div>
+
+
+<div class="qs-text">
+    <p>
+        A nossa história começou quando quatro jovens apaixonados por inovação e sustentabilidade
+        perceberam que o futuro precisava de soluções mais responsáveis. Com formação em engenharia,
+        ciência dos materiais e tecnologia ambiental, unimos forças para transformar aquilo que muitos
+        consideram desperdício numa oportunidade real de mudança.
+    </p>
+
+    <p>
+        Inspirados pelo impacto negativo dos plásticos tradicionais, decidimos focar-nos num caminho
+        mais ecológico: a criação de bioplásticos a partir de resíduos alimentares.
+        Após meses de pesquisa, testes e desenvolvimento, nasceu o nosso projeto, capaz de dar
+        uma segunda vida a materiais que normalmente seriam descartados.
+    </p>
+
+    <p>
+        Hoje, trabalhamos com parceiros locais, produtores e empresas para transformar restos
+        alimentares em soluções sustentáveis, resistentes e biodegradáveis. Acreditamos que a economia
+        circular é mais do que um conceito — é o caminho para um planeta mais equilibrado.
+    </p>
+
+    <p>
+        Continuamos a evoluir com a mesma missão que nos trouxe até aqui:
+        <strong>criar materiais inovadores que protejam o ambiente e redefinam o futuro dos bioplásticos.</strong>
+    </p>
+</div>
+<div class="linha-separadora"></div>
+</section>
+
+
+   <!-- Footer via JS -->
+  <div id="footer-placeholder"></div>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const counters = document.querySelectorAll('.counter');
+
+  const animateCounter = (counter) => {
+    const target = +counter.getAttribute('data-target');
+    let count = 0;
+
+    const speed = target / 200;
+
+    const update = () => {
+      if (count < target) {
+        count += speed;
+        counter.innerText = Math.floor(count);
+        requestAnimationFrame(update);
+      } else {
+        counter.innerText = target;
+      }
+    };
+
+    update();
+  };
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        counters.forEach(counter => animateCounter(counter));
+        obs.disconnect();
+      }
+    });
+  }, { threshold: 0.4 });
+
+  const section = document.querySelector('.counter-section');
+  observer.observe(section);
+
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Título da Página</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Swiper (opcional) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+  <!-- O teu CSS -->
+  <link rel="stylesheet" href="style.css?v=2">
+
+</head>
+<body>
+
+  <!-- Navbar via JS -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Conteúdo principal -->
+
+  
+<div class="contact-wrapper">
+  
+  <div class="contact-container">
+    <h1>Contacte-nos</h1>
+    <form class="contact-form" action="" method="post">
+      <div>
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" required>
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div>
+        <label for="questao">Mensagem</label>
+        <textarea id="questao" name="questao" required></textarea>
+      </div>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+ <div class="mapa">
+        <h1 class="section-title">Saiba onde nos Encontrar</h2>
+
+        <div class="map-box">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3003.7310474140404!2d-8.659345316481172!3d41.16221970485782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24658693370e3f%3A0xe4aea934f53ba3f6!2sAv.%20da%20Boavista%2C%20Porto!5e0!3m2!1spt-PT!2spt!4v1763598152537!5m2!1spt-PT!2spt"
+                loading="lazy">
+            </iframe>
+        </div>
+    </div>
+</div>
+
+<div class="faq-container">
+<div class="faq-title">Perguntas Frequentes</div>
+
+
+<div class="faq-item">
+<div class="faq-question">Como posso entrar em contacto com a equipa?<span class="arrowfaq">➤</span></div>
+<div class="faq-answer">Pode contactar-nos através do formulário ou diretamente pelo e-mail disponível na mesma página.</div>
+</div>
+
+
+<div class="faq-item">
+<div class="faq-question">Qual é o tempo médio de resposta?<span class="arrowfaq">➤</span></div>
+<div class="faq-answer">Normalmente respondemos dentro de 24 a 48 horas úteis.</div>
+</div>
+
+
+<div class="faq-item">
+<div class="faq-question">Posso participar no vosso projeto?<span class="arrowfaq">➤</span></div>
+<div class="faq-answer">Sim! Aceitamos voluntários, parceiros e colaboradores. Basta preencher o formulário de contacto.</div>
+</div>
+
+
+<div class="faq-item">
+<div class="faq-question">Onde estão localizados?<span class="arrowfaq">➤</span></div>
+<div class="faq-answer">Estamos sedeados em Portugal, e disponíveis online para qualquer esclarecimento.</div>
+</div>
+</div>
+
+  <!-- Footer via JS -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Swiper JS (opcional) -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+
+  <!-- Scripts da página -->
+  <script src="script.js"></script>
+  <script>
+    const items = document.querySelectorAll('.faq-item');
+
+
+items.forEach(item => {
+item.querySelector('.faq-question').addEventListener('click', () => {
+item.classList.toggle('active');
+});
+});
+
+document.querySelectorAll(".faq-item").forEach(item => {
+  item.addEventListener("click", () => {
+    item.classList.toggle("open");
+
+    const answer = item.querySelector(".faq-answer");
+
+    if (item.classList.contains("open")) {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    } else {
+      answer.style.maxHeight = 0;
+    }
+  });
+});
+
+
+  </script>
+</body>
+</html>
